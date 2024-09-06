@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block body %}
+<div class="main-content">
+    <div class="container contact-section">
+        <h2>Contact Me</h2>
+        
+        <div class="contact-details">
+            <h3>Get in Touch</h3>
+            <p>If you have any questions, or if you want to discuss potential projects, feel free to reach out to me using the contact form below or through the details provided.</p>
+            
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> Email: naqvi1223aown@gmail.com</p>
+                <p><i class="fas fa-phone-alt"></i> Phone: +92 3324877352</p>
+                <p><i class="fas fa-map-marker-alt"></i> Location: Lahore, Pakistan</p>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h3>Contact Form</h3>
+            <form action="{% url 'contact' %}" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary my-4">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock body %}

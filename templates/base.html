@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        /* Sidebar */
+        .sidebar {
+            background-color: #1c1c1c;
+            color: white;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .sidebar .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #00ffe0;
+            text-align: center;
+            border-bottom: 2px solid #00ffe0;
+            padding-bottom: 10px;
+            
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .sidebar ul li a:hover {
+            color: #00ffe0;
+            transform: translateX(5px);
+        }
+        .sidebar .social {
+            margin-top: 20px;
+        }
+        .sidebar .social a {
+            color: white;
+            margin-right: 15px;
+            font-size: 1.8rem;
+            transition: color 0.3s;
+        }
+        .sidebar .social a:hover {
+            color: #00ffe0;
+        }
+    
+        /* Main Content */
+        .main-content {
+            margin-left: 250px; /* Matches the sidebar width */
+            padding: 50px;
+            color: #f0f0f0;
+        }
+        .main-content h1{
+            font-size:4rem;
+            font-weight:bold;
+        }
+        .main-content h2, .main-content h3 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #00ffe0;
+            padding-bottom: 10px;
+            color: #00ffe0;
+        }
+        .main-content h3 {
+            font-size: 2rem;
+        }
+        .main-content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .main-content a {
+            color: #00ffe0;
+            text-decoration: none;
+            font-size:2rem;
+            font-weight: bold;
+            transition: color 0.5s, text-decoration 0.3s;
+        }
+        .main-content a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+    
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                box-shadow: none;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+            .sidebar ul {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            .sidebar ul li {
+                margin: 10px 0;
+            }
+            .sidebar .logo {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+        
+    </style>
+    
+</head>
+<body style = 'background:black'>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            A <!-- The logo, in this case, the letter "J" -->
+        </div>
+        <ul class="hover-black">
+            <li><a href="/about">About</a></li>
+            <li><a href="/skills">My Skills</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <div class="social hover-black">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/Batman51272"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    {% block body %}{% endblock body %}
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- For icons -->
+</body>
+</html>
